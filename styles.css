@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #343a40;
+}
+ 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem 1.5rem;
+    background-color: #ffffff;
+    border: #212529;
+}
+ 
+/* The content row that holds the dashboard and chatbot. */
+.row {
+    flex-grow: 1;
+    display: flex;
+    gap: 1.5rem;
+    min-height: 0; /* Prevents overflow issues */
+}
+ 
+/* This class centers the dashboard when the chatbot is off. */
+.row.dashboard-centered {
+    justify-content: center;
+}
+ 
+ 
+h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #212529;
+    text-align: center;
+    margin: 0;
+    flex-shrink: 0;
+}
+ 
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+#responseContainer {
+    flex: 1 1 380px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    height: calc(100vh - 120px);
+    margin-top: 1rem;
+}
+ 
+#responseContainer h2 {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4C6EF5;
+}
+ 
+.dashboard-container {
+    flex: 2 1 0;
+    display: flex;
+}
+ 
+.dashboard-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 16px; /* Match the card's border radius */
+}
+ 
+.form-group {
+    height: 100%;
+    margin-bottom: 1rem;
+}
+ 
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+ 
+input[type="text"] {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 1rem;
+}
+ 
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4C6EF5;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.2);
+}
+ 
+button#submitButton {
+    width: 100%;
+    margin-top: auto; /* Pushes button to the bottom */
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #4C6EF5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+ 
+button#submitButton:hover {
+    background-color: #3B5BDB;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+ 
+#responseContainer.hidden {
+    display: none;
+}
+ 
+.full-width {
+    flex: 0 0 98%;
+}
+ 
+.spinner {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+ 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.iphone-switch { position: relative; display: inline-block; width: 60px; height: 34px; }
+.iphone-switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: 0.4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: 0.4s; border-radius: 50%; }
+input:checked + .slider { background-color: #4caf50; }
+input:checked + .slider:before { transform: translateX(26px); }
